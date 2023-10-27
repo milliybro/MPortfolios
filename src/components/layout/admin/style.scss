@@ -1,0 +1,75 @@
+.dashboard-sider {
+  height: 100vh !important;
+  width: 300px !important;
+}
+
+.dashboard-logo {
+  color: #fff;
+  padding: 24px;
+  font-size: 24px;
+  width: 250px;
+  margin-top: 10px;
+}
+
+.dashboard-main {
+  margin: 0 !important;
+  overflow: auto !important;
+  height: calc(100vh - 64px) !important;
+}
+
+.dashboard-header {
+  background-color: #ffc700 !important;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 20px 0px;
+}
+
+.dashboard-header svg {
+  width: 300px !important;
+  height: 30px !important;
+  margin-left: -100px;
+  margin-top: 25px;
+  &:hover {
+    background-color: none !important;
+  }
+  fill: #000;
+}
+
+.menu {
+  background-color: #0f0c22;
+  a {
+    font-family: "Poppins";
+  }
+}
+.ant-layout-header {
+  height: 100px;
+}
+
+.ant-layout .ant-layout-sider {
+  background: #0f0c22;
+}
+.ant-layout {
+  background: #0f0c22;
+}
+.logout {
+  background-color: red;
+  padding: 50% 50px;
+  border-radius: 20px;
+  color: #fff;
+  width: 100%;
+  display: flex;
+}
+
+.ant-menu-dark .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-dark
+  > .ant-menu
+  .ant-menu-item-selected {
+  background-color: #222;
+  color: #ffc700;
+}
+
+
+.ant-layout .ant-layout-sider {
+   width: 300px !important;
+ }
