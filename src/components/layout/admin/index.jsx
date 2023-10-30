@@ -146,9 +146,9 @@ const AdminLayout = () => {
             },
             {
               key: "4",
-              icon: <LogoutOutlined />,
               label: (
                 <Link
+                className="closeButton"
                   onClick={() =>
                     Modal.confirm({
                       title: "Do you want to log out ?",
@@ -156,7 +156,7 @@ const AdminLayout = () => {
                     })
                   }
                 >
-                  Logout
+                  Logout 
                 </Link>
               ),
             },
