@@ -120,20 +120,7 @@ const UsersPage = () => {
         </p>
       ),
     },
-    {
-      title: "Role",
-      dataIndex: "role",
-      key: "role",
-      render: (data) => (
-        <p
-          className={`tag ${data === "client" ? "client" : ""} ${
-            data === "admin" ? "admin" : ""
-          } ${data === "client" ? "client" : ""} `}
-        >
-          {data}
-        </p>
-      ),
-    },
+    
     {
       title: "Action",
       dataIndex: "_id",
