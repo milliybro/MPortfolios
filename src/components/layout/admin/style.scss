@@ -1,14 +1,17 @@
 .dashboard-sider {
   height: 100vh !important;
-  width: 300px !important;
+  background-color: #1677ff !important;
+}
+
+.ant-menu {
+  background-color: #1677ff !important;
 }
 
 .dashboard-logo {
   color: #fff;
   padding: 24px;
-  font-size: 24px;
-  width: 250px;
-  margin-top: 10px;
+  font-size: 20px;
+  width: 200px;
 }
 
 .dashboard-main {
@@ -18,58 +21,233 @@
 }
 
 .dashboard-header {
-  background-color: #ffc700 !important;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  padding: 20px 0px;
+  background-color: #1677ff !important;
+  border-left: 1px solid #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notification {
+  margin-right: 20px;
+  border-radius: 6px;
+  display: flex;
+  svg {
+    padding: 2px 4px;
+    border: 1px solid #fff;
+    background-color: #dc3545;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.5s ease;
+    height: 30px;
+    width: 40px;
+  }
+
+  &:hover {
+    svg,
+    path {
+      fill: red;
+      background-color: #fff;
+    }
+  }
+}
+
+.notification-open {
+  right: 20px;
+  transition: 0.8s ease !important;
+}
+
+.notification-close {
+  right: -300px;
+  transition: 0.8s ease !important;
+}
+
+.notification-content {
+  position: fixed;
+  min-width: 200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  max-height: 70vh;
+  top: 70px;
+  z-index: 10;
+  background-color: #1677ff;
+  border-radius: 10px;
+
+  &-title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  &-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+
+    p {
+      margin-bottom: 0;
+      color: #fff;
+      min-width: 130px;
+    }
+  }
+
+  &-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    button {
+      cursor: pointer;
+      padding: 3px 5px;
+      background-color: #1677ff;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      transition: 0.5s ease;
+    }
+    .disabled {
+      opacity: 0.5;
+      cursor: auto;
+    }
+  }
+
+  .close-btn {
+    background-color: #1677ff;
+    color: #fff;
+    border-radius: 4px;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: 0.5s ease;
+    &:hover {
+      border: 1px solid #fff;
+      background-color: #fff;
+      color: #1677ff;
+    }
+  }
+
+  .upgrade-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    &:hover {
+      background-color: #fff;
+      color: #28a745;
+    }
+  }
+}
+
+.ant-menu-item-selected {
+  border: 1px solid #fff;
 }
 
 .dashboard-header svg {
-  width: 300px !important;
-  height: 30px !important;
-  margin-left: -100px;
-  margin-top: 25px;
-  &:hover {
-    background-color: none !important;
-  }
-  fill: #000;
+  fill: #fff;
+}
+
+.ant-menu-item.active {
+  background-color: #1677ff;
 }
 
 .menu {
-  background-color: #0f0c22;
   a {
     font-family: "Poppins";
   }
+
+  a.active::before {
+    background-color: #001529 !important;
+  }
+}
+
+.header-btn {
+  position: relative;
+  margin-right: 20px;
+  background-color: #dc3545 !important;
+  color: #fff !important;
+  .dashboard-badge {
+    position: absolute;
+    top: -0px;
+    right: -2px;
+  }
 }
 .ant-layout-header {
-  height: 100px;
+  height: 64px;
+  padding: 0 50px;
+  color: rgba(0, 0, 0, 0.88);
+  line-height: 64px;
+  background: #ffc700 !important;
+}
+.dashboard-sider {
+  height: 100vh !important;
+  background-color: #ffc700 !important;
+  .ant-menu {
+    background-color: #ffc700 !important;
+  }
+}
+.ant-menu-item-selected {
+  color: #dc3545 !important;
+  background-color: transparent !important;
+  border: none;
 }
 
-.ant-layout .ant-layout-sider {
-  background: #0f0c22;
-}
-.ant-layout {
-  background: #0f0c22;
-}
-.logout {
-  background-color: red;
-  padding: 50% 50px;
-  border-radius: 20px;
-  color: #fff;
-  width: 100%;
+.notification-content-user {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color:rgba(40, 167, 69, 0.5) ;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 20px;
+  p {
+    margin-bottom: 0;
+    color: #dc3545;
+    min-width: 130px;
+    font-size: 26px;
+  }
+  button{
+    background-color: #ffc700;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    &:hover{
+      box-shadow: 0px 0px 20px #ffc700;
+      transform: scale(1.1);
+    }
+  }
 }
 
-.ant-menu-dark .ant-menu-item-selected,
-:where(.css-dev-only-do-not-override-xu9wm8).ant-menu-dark
-  > .ant-menu
-  .ant-menu-item-selected {
-  background-color: #222;
-  color: #ffc700;
+.notification-content-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
 }
 
-
-.ant-layout .ant-layout-sider {
-   width: 300px !important;
- }
+.notification-content-pagination button {
+  cursor: pointer;
+  padding: 5px 8px;
+  background-color: #ffc700;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: 0.5s ease;
+}
