@@ -118,11 +118,47 @@ const AccountPage = () => {
      </div>
    </div>
  );
+ const [account, setAccount] = useState(null);
+ const getUser = async () => {
+   const { data } = await request.get("auth/me");
+   setAccount(data);
+ };
+ useEffect(()=>{
+   getUser()
+ }, [])
   const items = [
     {
       key: "1",
       label: "Account",
-      children: "Content of Tab Pane 1",
+      children: (<Fragment>
+         <div className="account-map">
+            <div className="map-left">
+               <img src={account?.photo} alt="" />
+            </div>
+            <div className="map-right">
+               <div className="info-part">
+                  <p>Username</p>
+                  <h5>@{account?.username}</h5>
+               </div>
+               <div className="info-part">
+                  <p>FullName</p>
+                  <h5>{account?.firstName} {account?.lastName}</h5>
+               </div>
+               <div className="info-part">
+                  <p>Address</p>
+                  <h5>{account?.address}</h5>
+               </div>
+               <div className="info-part">
+                  <p>Email</p>
+                  <h5>{account?.email}</h5>
+               </div>
+               <div className="info-part">
+                  <p>Number</p>
+                  <h5>{account?.phoneNumber}</h5>
+               </div>
+            </div>
+         </div>
+      </Fragment>),
     },
     {
       key: "2",
@@ -157,7 +193,7 @@ const AccountPage = () => {
                   showUploadList={false}
                   action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
                   beforeUpload={beforeUpload}
-                  onChange={handleChange}
+                  onChange={uploadImage}
                 >
                   {imageUrl ? (
                     <img
