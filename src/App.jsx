@@ -13,6 +13,9 @@ import { authName } from "./redux/slices/auth";
 import EducationPage from "./pages/admin/education";
 import UserLayout from "./components/layout/user";
 import NotFoundPage from "./pages/NotFound";
+import Cookies from "js-cookie";
+import { TOKEN } from "./constants";
+import AccountPage from "./pages/public/account";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state[authName]);
@@ -23,6 +26,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route
+            path="/account"
+            element={(Cookies.get(TOKEN)) ? <AccountPage /> : <Navigate to="/" />}
+          />
         </Route>
         <Route
           element={

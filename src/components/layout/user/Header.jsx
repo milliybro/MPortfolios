@@ -5,9 +5,11 @@ import useScreenSize from "../../../utils/screenSize";
 import notification from "../../../assets/bell.png";
 import message from "../../../assets/conversation.png";
 import light from "../../../assets/light.png";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import {  Drawer } from "antd";
 import messagemain from "../../../assets/message.png"
+import Cookies from "js-cookie";
+import { TOKEN } from "../../../constants";
 
 const Header = () => {
   const screenSize = useScreenSize();
@@ -20,6 +22,7 @@ const Header = () => {
   const onClose = () => {
     setOpen(false);
   };
+  const isAuthenticated = Boolean(Cookies.get(TOKEN))
   return (
     <header>
       <nav className="nav">
@@ -43,16 +46,30 @@ const Header = () => {
                 <img src={light} alt="" />
               </Link>
             </li>
-            <li className="nav__item">
-              <Link className="nav__link" to="/register">
-                Sign Up
-              </Link>
-            </li>
-            <li className="nav__item">
-              <Link className="nav__link" to="/login">
-                Sign In
-              </Link>
-            </li>
+            {isAuthenticated ? (
+              <li className="nav__item">
+                <Link className="nav__link" to="/account">
+                  My Account
+                </Link>
+                <Link className="nav__link" to="/dashboard">
+                  Dashboard
+                </Link>
+              </li>
+            ) : (
+              <Fragment>
+                <li className="nav__item">
+                  <Link className="nav__link" to="/login">
+                    Sign In
+                  </Link>
+                </li>
+                <li className="nav__item">
+                  <Link className="nav__link" to="/register">
+                    Sign Up
+                  </Link>
+                </li>
+              </Fragment>
+            )}
+            
           </ul>
           <Drawer
             title="Message"

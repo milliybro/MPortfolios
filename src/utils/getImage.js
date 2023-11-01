@@ -3,3 +3,8 @@ export const getImage = ({ _id, name }) => {
     name?.split(".")[1]
   }`;
 };
+
+export const getUserImage = (id) => {
+  return `https://ap-portfolio-backend.up.railway.app/upload/${id.split("_")[1]}
+`;
+}

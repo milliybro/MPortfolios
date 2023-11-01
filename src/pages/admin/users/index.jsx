@@ -180,7 +180,7 @@ const UsersPage = () => {
                 }}
                 placeholder="Searching..."
               />
-              <Select
+              {/* <Select
                 defaultValue="user"
                 onChange={filterUsers}
                 style={{ width: 120, marginRight: "20px" }}
@@ -195,7 +195,7 @@ const UsersPage = () => {
                     label: "Client",
                   },
                 ]}
-              />
+              /> */}
               <Button onClick={showModal} type="primary">
                 Add user
               </Button>
