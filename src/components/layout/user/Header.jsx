@@ -23,6 +23,7 @@ const Header = () => {
     setOpen(false);
   };
   const isAuthenticated = Boolean(Cookies.get(TOKEN))
+  
   return (
     <header>
       <nav className="nav">
